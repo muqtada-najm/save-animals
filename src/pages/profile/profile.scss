@@ -1,0 +1,111 @@
+page-profile {
+
+    .toolbar-title-md {
+        margin: -33px;
+    }
+
+    .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+        color: white;
+        background-color: transparent;
+    }
+    .bar-button-default-ios, .bar-button-default.bar-button-ios-default, .bar-button-clear-ios-default {
+        color: white;
+        background-color: transparent;
+    }
+
+     .cont-ent {
+        margin: 22px 10px;
+        text-align: center;
+        box-shadow:4px 2px 25px -13px;
+        border-radius: 2px;
+        padding: 10px;
+        font-size: 16px;
+     }
+     .cont-set {
+        margin: 22px 10px;
+        padding: 20px;
+        background: white;
+        box-shadow: 6px 5px 29px -13px;
+        border-radius: 4px;
+     }
+     .ion-card {
+        display: contents;
+        overflow: hidden;
+    }
+    .card_header{
+        height: 235px;
+        background-image: url('../../assets/imgs/profile.jpg') ;
+    }
+    .in_card{
+        background: linear-gradient(to bottom right, #00c68ebd, #43ffddd4);
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+    .toolbar-background-md {
+        background: #f8f8f800; 
+    }
+    .toolbar-background-ios {
+         background: #f8f8f800; 
+    }
+    .header-md .toolbar-background-md, .footer-md .toolbar-background-md {
+        border: none; 
+    }
+    .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+        right: 0;
+        bottom: -5px;
+        background-position: right 0 top -2px;
+        position: absolute;
+        width: 100%;
+        height: 5px;
+        background-image:none;
+        background-repeat: repeat-x;
+        content: "";
+    }
+    .header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios {
+        border: none; 
+    }
+    .toolbar-title-ios {
+        text-align: center;
+        font-size: 1.7rem;
+        font-weight: 600;
+         color: white; 
+        pointer-events: auto;
+    }
+    .toolbar-title-md {
+        text-align: center;
+        font-size: 1.7rem;
+        font-weight: 600;
+         color: white; 
+        pointer-events: auto;
+    }
+
+    .img-profile {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto;
+        border: 2px solid white;
+        border-radius: 50%;
+        margin: 65px auto;
+    }
+
+    .sup-1 {
+        text-align: initial;
+        border-bottom: 2px solid #6f6c6cba;
+        border-left: 2px solid #6f6c6cba;
+    }
+    .sup-2 {
+        text-align: center;
+        border-bottom: 2px solid #6f6c6cba;
+    }
+    .sup-4 {
+        text-align: initial;
+        border-bottom: 2px solid #6f6c6cba;
+        border-right: 2px solid #6f6c6cba;
+    }
+    .sup-3 {
+        text-align: center;
+        border-bottom: 2px solid #6f6c6cba;
+    }
+}
+

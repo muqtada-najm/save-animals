@@ -1,0 +1,8 @@
+{
+  "name": "save-animals",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

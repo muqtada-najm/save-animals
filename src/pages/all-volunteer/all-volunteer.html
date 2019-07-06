@@ -1,0 +1,38 @@
+
+<ion-header (click)="back()">
+
+    <ion-navbar  color="gren-hieg-2"  style="text-align: center;" >
+        <!-- <ion-buttons start>
+            <button ion-button icon-only menuToggle>
+              <ion-icon name="menu" style="color: white; font-size: 30px"></ion-icon>
+            </button>
+          </ion-buttons> -->
+      <ion-title>المتطوعين </ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding >
+  <div style="position:relative;">
+    <ion-input (input)="getItems($event)" dir='rtl' class="ion-input" type="text" value="" placeholder="بحث">
+    </ion-input>
+    <ion-icon dir='ltr' style="float: left;font-size: 25px;color: #9494948f; position:absolute; left: 0;top: 8px; padding: 3px 8px;" name="search"></ion-icon>
+  </div>
+  
+  <ion-list style="padding: 10px;margin: 28px 0px 0px 0px;border-radius: 20px;box-shadow: 3px 6px 49px -15px;">
+    <ion-item (click)="goto(item.email)" class="bacg" *ngFor="let item of items  " style="border:none;">
+      <ion-avatar item-start>
+            <img *ngIf="item.status == 'طبيب بيطري'" style="width: 40px;height: 40px" src="../../assets/imgs/doctor.png">
+            <img *ngIf="item.status == 'مساعد في النقل'" style="width: 40px;height: 40px" src="../../assets/imgs/taxi-driver.png">
+            <img *ngIf="item.status == 'داعم للبرنامج'" style="width: 40px;height: 40px" src="../../assets/imgs/mechanic.png">
+            <img *ngIf="item.status == 'كفل الحيوان'" style="width: 40px;height: 40px" src="../../assets/imgs/employee.png">
+        
+      </ion-avatar>
+      <h2>{{item.name}}</h2>
+      <h3>{{item.status}}</h3>
+      <p>{{item.zone}} | {{item.phone}}</p>
+    </ion-item>
+   
+  </ion-list></ion-content>
+  

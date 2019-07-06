@@ -1,0 +1,82 @@
+
+
+
+
+<ion-content *ngIf="data != 'undefined'">
+    <ion-card style="margin:0px;width:100%; height: 100%;display: contents;">
+      <div class="card_header">
+        <div class="in_card">
+            <ion-header >
+                <ion-navbar >
+                <ion-buttons start>
+                    <button style="color: white;" ion-button icon-only menuToggle>
+                      <ion-icon name="menu" style="color: white; font-size: 30px"></ion-icon>
+                    </button>
+                  </ion-buttons>  
+                  <ion-title  style="color:white;">الملف الشخصي</ion-title>
+                </ion-navbar>
+              </ion-header>
+              <div style="display: inline-flex;     margin: 0px -80px 0px 0px;">
+                <div>
+                  
+                </div>
+                <div style="    margin: 65px auto;color: white;">
+                    <h3 style="color:white; border: 1px solid white;border-radius: 4px; padding: 1px 2px;">
+               {{data.status}}
+              </h3>   
+                </div>
+                <img *ngIf="data.status == 'طبيب بيطري'" class="img-profile" src="../../assets/imgs/doctor.png">
+            <img *ngIf="data.status == 'مساعد في النقل'" class="img-profile"  src="../../assets/imgs/taxi-driver.png">
+            <img *ngIf="data.status == 'داعم للبرنامج'" class="img-profile"  src="../../assets/imgs/mechanic.png">
+            <img *ngIf="data.status == 'كفل الحيوان'"  class="img-profile"  src="../../assets/imgs/employee.png">
+  
+                  <!-- <img class="img-profile" src="../../assets/imgs/user.jpg"/> -->
+              </div>
+              <p style="margin: -65px; color: white; font-size: 20px;">{{data.name}}</p>
+
+        </div>
+      </div>
+        <ion-card-content class="cont-ent">
+          <ion-grid>
+            <ion-row>
+              <ion-col col-8 class="sup-1">
+                <ion-icon name="person" icon-only style="color:#14cb97;margin: 0px 5px 0px 0px;"></ion-icon>
+                <span style="color:#4a4a4a">{{data.name}}</span>
+                <br>
+                <ion-icon name="mail" icon-only style="color:#14cb97;margin: 0px 5px 0px 0px;"> </ion-icon>
+                <span style="color:#4a4a4a">{{data.email}}</span>
+              </ion-col>
+              <ion-col col-4 class="sup-2">
+                <ion-icon name="pin" icon-only style="color:#14cb97"></ion-icon>
+                <br>
+              <span style="color:#4a4a4a">{{data.zone}}</span> 
+              </ion-col>
+
+            </ion-row>
+            <ion-row>
+               <ion-col col-5 class="sup-3">
+                <ion-icon name="people" icon-only style="color:#14cb97"></ion-icon>
+                <br>
+                <span style="color:#4a4a4a">{{data.status}}</span> 
+              </ion-col>             
+              <ion-col dir="ltr" col-7 class="sup-4">
+                <ion-icon name="ios-call" icon-only style="color:#14cb97"></ion-icon>
+                <span style="font-family: serif;" style="color:#4a4a4a">{{data.phone}}</span>
+                <br>
+                <ion-icon name="ios-paper-plane" icon-only style="color:#14cb97"></ion-icon>
+                <span  style="color:#4a4a4a">@wounds</span>
+              </ion-col>
+
+              <button ion-button  round style="width: 166px;display: block;margin: 41px auto 10px auto;background: linear-gradient(to bottom right, #00c68eeb, #4adab9);"
+              href='mail:data.status'>
+                ارسال رسالة</button>
+            </ion-row>
+          </ion-grid>
+        </ion-card-content>
+        <ion-card-content class="cont-set">
+            <ion-icon name="leaf" icon-only style="color:#14cb97;font-size: 20px;"></ion-icon>
+            <span >عدد الحالات التي ساعدها : 10</span>
+        
+        </ion-card-content>
+      </ion-card>
+</ion-content>

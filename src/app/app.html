@@ -1,0 +1,49 @@
+<ion-menu [content]="content" dir="rtl">
+  <ion-header>
+    <ion-toolbar color="gren-hieg-2">
+      <ion-title>القائمة</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content dir="rtl">
+    <ion-list >
+      <button ion-item menuClose (click)="openPage(pages[0])">
+        <ion-icon name="home" style="font-size: 22px; padding: 0px 0px 0px 8px"></ion-icon>
+        الرئيسية
+      </button>
+      <button *ngIf="statuslogin == 'logout'"  ion-item menuClose (click)="openPage(pages[1])">
+        <ion-icon name="ios-leaf" style="font-size: 22px; padding: 0px 0px 0px 8px"></ion-icon>
+        التطوع
+      </button>
+      <button *ngIf="isadmin  == 'true'"  ion-item menuClose (click)="rootpage(pages[3])">
+        <ion-icon name="shirt" style="font-size: 22px; padding: 0px 0px 0px 8px"></ion-icon>
+        المتطوعين الجدد
+      </button>
+      <button *ngIf="isadmin == 'true'"  ion-item menuClose (click)="rootpage(pages[7])">
+        <ion-icon name="ios-people" style="font-size: 22px; padding: 0px 0px 0px 8px"></ion-icon>
+        المتطوعين 
+      </button>
+      <button *ngIf="isadmin == 'true'" ion-item menuClose (click)="rootpage(pages[6])">
+        <ion-icon name="md-quote" style="font-size: 22px; padding: 0px 0px 0px 8px"></ion-icon>
+        الحالات المعلقة
+      </button>
+      <button *ngIf="statuslogin != 'logout'" ion-item menuClose (click)="openPage(pages[4])">
+        <ion-icon name="md-pulse" style="font-size: 22px; padding: 0px 0px 0px 8px"></ion-icon>
+       الحالات
+      </button>
+      <button *ngIf="statuslogin != 'logout'" ion-item menuClose (click)="openPage(pages[5])">
+        <ion-icon name="megaphone" style="font-size: 22px; padding: 0px 0px 0px 8px"></ion-icon>
+       اخر الاخبار
+      </button>
+      <button *ngIf="statuslogin == 'logout'" ion-item menuClose (click)="openPage(pages[2])">
+        <ion-icon name="md-log-in" style="font-size: 22px; padding: 0px 0px 0px 8px"></ion-icon>
+        تسجيل الدخول
+      </button>
+      <button *ngIf="statuslogin != 'logout'" ion-item menuClose (click)="logout()">
+        <ion-icon name="ios-log-out" style="font-size: 22px; padding: 0px 0px 0px 8px"></ion-icon>
+        تسجيل الخروج
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav id="nav" #content [root]="rootPage"></ion-nav>

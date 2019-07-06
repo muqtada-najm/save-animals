@@ -1,0 +1,28 @@
+page-all-volunteer {
+    .toolbar-title-md{
+        margin: -30px;
+    }
+        .ion-input{
+            box-shadow: 2px 12px 56px -17px;
+            border-radius: 20px;
+        }
+        .text-input , .text-input-md {
+            margin: 13px 26px 12px 0px;
+            padding: 0px 0px 0px 56px;
+    
+        }
+        .bacg {
+            background-image: url(../assets/imgs/back.svg);
+            background-position: left;
+            background-size: 15px;
+            margin: 0px 0px 0px 4px;
+            padding-right: 0px;
+            background-position: left 14px center;
+            background-position: left calc(14px + constant(safe-area-inset-right)) center;
+            background-position: left calc(14px + env(safe-area-inset-right)) center;
+            background-repeat: no-repeat;
+            background-size: 14px 14px;
+        }
+    
+        
+}

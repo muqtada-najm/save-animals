@@ -1,0 +1,194 @@
+
+page-home {
+
+    .title{
+        text-align: center;
+        color: white;
+        top: 0;
+        right: 0;
+        padding: 0 90px 1px;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        font-size: 30px;
+        transform: translateZ(0);
+    }
+    .toolbar-title-ios {
+        text-align: center;
+        margin: -7px;
+    }
+
+
+    .header-md{
+        direction: ltr;
+    }
+
+    .home-logo {
+        width:220px;
+        height:150px;     
+        display: block;
+        margin: 0 auto 0 auto;
+    }
+    .mymarguin {
+        margin: -47px 0px 0px 0px;
+
+    }
+    .border {
+       
+        width: 321px;
+        height: 340px;
+        background-color: white;
+        border: 1px solid;
+        border-radius: 30px;
+        margin: 0 auto 0 auto;
+        box-shadow: 1px 1px 26px 1px white;
+
+    }
+    .button-round-md {
+        border-radius: 64px;
+        padding: 12px 10.6rem;
+        margin-bottom: 20px;
+    }
+    .mycolor {
+        // background: #E8F1F2;
+        //background: url(../../assets/imgs/animal-cat.jpg) no-repeat center;
+        background: linear-gradient( to bottom right, #3dcc83 , #03b898);
+        width: 100%;
+        -webkit-background-size: cover;
+        background-size: cover;
+        background-attachment: fixed;  
+        color: white;
+        
+  
+     }
+
+
+
+
+
+    .flat {
+        position: relative;
+        height: 72px;
+        padding: 16px 5px 8px 5px;
+        margin: 0px 10px 0px 10px
+    
+        
+    }
+    .flat-label {
+        position: relative;
+        margin: 0;
+        color:#999;
+        line-height: 16px;
+        font-size: 16px;
+        font-weight: 400;
+        display: block;
+        transform: translateY(24px);
+        transition: transform 0.3s ,font-size 0.3s;
+        transform-origin: 0 50%;
+    }
+
+    .flat-input {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 32px;
+        background: transparent;
+        font-size: 16px;
+       padding: 0px 2px;
+       line-height: 16px;
+       border: none;
+       -webkit-appearance: none;
+       color: #000000;
+       outline: none;
+    }
+    .flat::after , .flat::before{
+        content:'';
+        height: 2px;
+        width: 100%;
+        position: absolute;
+        bottom: 6px;
+        left: 0;
+        background-color: #aaa7a7;
+    }
+
+    .flat::after {
+        background-color: #03b898;
+        transform: scaleX(0);
+        transition: transform 0.3s
+
+    }
+
+
+    .is-select .flat-label {
+        transform: translateY(0px) ; 
+        font-size: 14px;
+        color:#3dcc83;
+    }
+  
+    .flat.is-select::after {
+        transform: scaleX(1);
+    }
+
+
+    .list-ios .item-block .item-inner {
+        border-bottom: 1.55px solid #aaa7a7;
+    }
+    .item-ios.item-block .item-inner {
+        padding-left: 8px;
+        padding-left: 8px;
+        border-bottom: 1.55px solid #aaa7a7;
+    }
+    .list-md .item-block .item-inner {
+        border-bottom: 1.55px solid #aaa7a7;
+
+    }
+
+    .list-md .item-block .item-inner {
+        padding-left: 8px;
+        padding-left: 8px;
+        border-bottom: 1.55px solid #aaa7a7;   
+    }
+
+
+
+
+
+
+
+
+    .mylabel {
+        margin: 0;
+        display: block;
+        overflow: hidden;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        font-size: inherit;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .stcolor{
+        color: #999;
+    }
+    .mycaloris {
+        color: #3dcc83;
+    }
+    .label-md {
+        margin: 5px 2px 6px 1px;
+    }
+
+
+
+
+
+
+
+    .flat1 {
+        position: relative;
+        height: 72px;
+        padding: 19px 0px 0px 13px;
+        margin: 0px 0px 0px 0px;
+    }
+
+}

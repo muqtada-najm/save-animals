@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-navbar color="gren-2" >
+    <ion-buttons start>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu" style="color: white; font-size: 30px"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title class="title">تسجيل الدخول</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <div class="mymarguin">
+    <div class="border">
+      <div >
+     <div>
+    <h3 style="text-align:center; color: #3dcc83; margin: 40px 0px 0px 0px;">
+    <strong>تسجيل الدخول</strong>  
+    </h3>
+    <hr style="background-color:#3dcc83; height:2px; width: 237px;">
+  </div>
+
+  <div  style="color: #3dcc83;">
+    <ion-list>
+
+        <div class="flat">
+            <label for="inputname" class="flat-label">
+                <ion-icon class="mypadding" name="md-mail">
+                    <strong>الاميل</strong>
+                  </ion-icon>
+            </label>
+            <!-- 
+             
+             -->
+            <input  #email  id="flat-input1" type="text" class="flat-input1 flat-input is-select" name="flat-input" 
+            onfocus=" $(this).parent().addClass('is-select filed');"
+            onblur="if ($(this).val() == ''){$(this).parent().removeClass('is-select'); }"  >
+          </div>
+        
+
+          
+          <div class="flat">
+              <label for="inputname" class="flat-label">
+                  <ion-icon class="mypadding" name="lock">
+                      <strong>كلمه السر</strong>
+                    </ion-icon>
+              </label>
+              <input #password id="flat-input" type="password" class="flat-input is-select" name="flat-input" 
+              onfocus=" $(this).parent().addClass('is-select filed');"
+              onblur="if ($(this).val() == ''){$(this).parent().removeClass('is-select'); }">
+            </div>
+                <ion-grid>
+        <ion-row>
+          <ion-col col-6>
+            <button ion-button style=" display: block; margin: 0 auto 0 auto; background: linear-gradient( to bottom right, #3dcc83 , #03b898); border-radius: 15px"
+            (click)="login(email.value,password.value)">
+              <ion-icon style="font-size: 15px" class="mypadding" name="md-log-in">
+                تسجيل الدخول
+              </ion-icon>
+            </button>
+          </ion-col>
+          <ion-col col-6>
+            <button ion-button block style=" display: block; margin: 0 auto 0 auto; background: linear-gradient( to bottom right, #3dcc83 , #03b898); border-radius: 15px"
+             (click)="ivolunteer()">
+              <ion-icon style="font-size: 15px" class="mypadding" name="md-person-add"> الانضمام</ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12 style="padding: 10px">
+            <strong (click)="passwordReset()">
+              <span style="font-size: 20px; color: #3dcc83; padding: 5px">هل نسيت كلمه السر؟</span>
+            </strong>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-list>
+
+  </div>  
+</div>
+    </div>
+  </div>
+ 
+</ion-content>

@@ -1,0 +1,17 @@
+
+<div *ngIf="loginstatus == 'logout'">
+<ion-tabs  [selectedIndex]="myindex" color="gren-hieg-2" >
+  <ion-tab   [root]="tab1Root" tabTitle="الرئيسية" tabIcon="ios-home"></ion-tab>
+  <ion-tab   [root]="tab2Root" tabTitle="التطوع" tabIcon="ios-leaf"></ion-tab>
+  <ion-tab   [root]="tab3Root" tabTitle="تسجيل دخول" tabIcon="md-log-in"></ion-tab>
+  <!-- <ion-tab   [root]="tab4Root" tabTitle="الحالات" tabIcon="megaphone"></ion-tab> -->
+</ion-tabs>
+
+</div>
+<div  *ngIf="loginstatus != 'logout'" >
+  <ion-tabs  [selectedIndex]="myindex" color="gren-hieg-2" >
+    <ion-tab   [root]="tab1Root" tabTitle="الرئيسية" tabIcon="ios-home"></ion-tab>
+    <ion-tab   [root]="tab4Root" tabTitle="الحالات" tabIcon="md-pulse"></ion-tab>
+    <ion-tab   [root]="tab5Root" tabTitle="اخر الاخبار" tabIcon="ios-megaphone"></ion-tab>
+  </ion-tabs>
+</div>

@@ -1,0 +1,137 @@
+<ion-header>
+  <ion-navbar color="gren-2" >
+    <ion-buttons start>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu" style="color: white; font-size: 30px"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title class="title">الرئيسية</ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="mycolor">
+  <div padding >
+    <img class="home-logo" src="../../assets/imgs/Untitled-2.png" >
+    <div class="mymarguin" *ngIf="isend == 'first'">
+      <div class="border">
+        <div padding>
+          <p style="font-family: 'Tajawal', sans-serif;color:#3dcc83; margin: 10px 0px 0px 10px; font-size: 28px; text-align: center;">
+            مرحباً بك </p>
+          <p padding style="color:#4a4a4a; font-size: 20px; margin: 0px 0px 20px 0px">
+            نحن مجموعة تطوعية تهدف إلى مساعدة الحيوانات المصابة كل ما تحتاجه هو فقط إرسال الحالة بالتفاصيل التي نطلبها منك وسوف نساعد
+            الحيوان.
+          </p>
+          <!-- <button ion-button (click)="iamsend(isend='isend')" style=" width: 90%; display: block; margin: 0 auto 0 auto; background: linear-gradient( to bottom right, #3dcc83 , #03b898); border: 1px solid white;"
+            round>ارسال حالة</button> -->
+            <button ion-button (click)="iamsend(isend='isend')"  style="border-radius: 20px; width:166px; display: block; margin: 0 auto 0 auto; background: linear-gradient( to bottom right, #3dcc83 , #03b898);">
+              ارسال حالة</button>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div *ngIf="isend == 'isend'" dir="rtl" style="font-size: 20px;  font-family: 'Changa', sans-serif;">
+      <div class="mymarguin">
+        <div class="border" style="height: 100%;">
+          <ion-list>
+            <p style="font-family: 'Tajawal', sans-serif;color:#3dcc83; margin: 18px 0px 0px 10px; font-size: 28px; text-align: center;">
+              املأ المعلومات
+            </p>
+            <div class="flat">
+              <label for="inputname" class="flat-label">
+                <ion-icon name="md-person"> الاسم الكامل</ion-icon>
+              </label>
+              <input [(ngModel)]="data.name" id="flat-input" type="text" class="flat-input is-select" name="flat-input"
+              onfocus=" $(this).parent().addClass('is-select filed');"
+              onblur="if ($(this).val() == ''){$(this).parent().removeClass('is-select'); }" >
+                <!--  onfocus="$(this).parent().addClass('is-select');"
+                onblur="if 
+                ($(this).val() == ''){
+                  $(this).parent().removeClass('is-select'); 
+                }"-->
+            </div>
+            <div class="flat1">
+              <ion-item>
+                <ion-label class="stcolor mylabel" >
+                  <ion-icon name="md-flag" [ngClass]="{mycaloris:data.status != ''}" style="font-size: 18px"> الحالة</ion-icon>
+                </ion-label>
+                <ion-select [(ngModel)]="data.status" cancelText="الغاء" okText="موفقه">
+                  <ion-option value="قطة">قطه </ion-option>
+                  <ion-option value="كلب">كلب</ion-option>
+                  <ion-option value="حيوان اخر">حيوان اخر</ion-option>
+                </ion-select>
+              </ion-item>
+            </div>
+            <div class="flat">
+              <label for="inputname" class="flat-label">
+                <ion-icon name="md-pin"> المنطقه</ion-icon>
+              </label>
+              <input [(ngModel)]="data.zone" id="flat-input" type="text" class="flat-input is-select" name="flat-input" 
+              onfocus=" $(this).parent().addClass('is-select filed');"
+              onblur="if ($(this).val() == ''){$(this).parent().removeClass('is-select'); }">
+            </div>
+            <div class="flat">
+              <label for="inputname" class="flat-label">
+                <ion-icon name="md-call"> رقم الهاتف</ion-icon>
+              </label>
+              <input [(ngModel)]="data.phone" id="flat-input" type="text" class="flat-input is-select" name="flat-input" 
+              onfocus=" $(this).parent().addClass('is-select filed');"
+              onblur="if ($(this).val() == ''){$(this).parent().removeClass('is-select'); }">
+            </div>
+            <div class="flat">
+              <label for="inputname" class="flat-label">
+                <ion-icon name="md-clipboard"> ملاحضات</ion-icon>
+              </label>
+              <textarea [(ngModel)]="data.note" rows="4" id="flat-input" type="text" class="flat-input is-select" name="flat-input" 
+              onfocus=" $(this).parent().addClass('is-select filed');"
+              onblur="if ($(this).val() == ''){$(this).parent().removeClass('is-select'); }"> </textarea>
+            </div>
+            <br>
+            <button ion-button  round (click)="send()" style="width:166px; display: block; margin: 0 auto 0 auto; background: linear-gradient( to bottom right, #3dcc83 , #03b898);">
+            ارسال</button>
+          </ion-list>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div *ngIf="isend == 'iscomplet'" style="font-size: 20px;  font-family: 'Changa', sans-serif;">
+      <div class="mymarguin">
+        <div class="border" style="width: 100%; height: 100%;">
+          <div padding>
+            <ion-card-content dir="rtl" style="font-size: 18px">
+              <ion-icon name="md-checkmark-circle" style="font-size: 50px; color: #3dcc83; text-align: center; margin: 0px 0px 0px 10px;   display: block;"></ion-icon>
+              <p style="color:#4a4a4a; font-size: 20px; margin: 0px 0px 20px 0px">
+                تمت ارسال الحالة بنجاح سوف نتواصل معك باقرب وقت ممكن كن قريب من هاتفك فسوف يتصل بك احد المتطوعين من اجل هذا الحيوان المسكين
+                يمكنك التطوع من اجل مساعدة الحيوانات المتضررة
+              </p>
+              <ion-grid>
+                <ion-row>
+                  <ion-col col-6>
+                    <button ion-button block style=" display: block; margin: 0 auto 0 auto; background: linear-gradient( to bottom right, #3dcc83 , #03b898); border-radius: 15px"
+                      (click)="iamsend(isend='isend')">
+                      <ion-icon style="font-size: 15px" class="mypadding" name="ios-send">
+                        ارسال حالة
+                      </ion-icon>
+                    </button>
+                  </ion-col>
+                  <ion-col col-6>
+                    <button ion-button block style=" display: block; margin: 0 auto 0 auto; background: linear-gradient( to bottom right, #3dcc83 , #03b898); border-radius: 15px"
+                      (click)="iamsend(isend='first')">
+                      <ion-icon style="font-size: 15px" class="mypadding" name="home"> الرئيسية</ion-icon>
+                    </button>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

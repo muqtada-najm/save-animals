@@ -1,0 +1,123 @@
+<ion-header >
+
+  <ion-navbar color="gren-2" >
+      <ion-buttons start>
+          <button ion-button icon-only menuToggle>
+            <ion-icon name="menu" style="color: white; font-size: 30px"></ion-icon>
+          </button>
+        </ion-buttons>
+    <ion-title class="title" >التطوع</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-card class="card">
+        <ion-card-content>
+         
+  <h3 style="font-size: 30px; text-align:center; color: #3dcc83; margin: 12px 0px 0px 0px;">التطوع في هذا البرنامج</h3>
+  <hr style="background-color:#3dcc83; height:2px">
+  <div *ngIf="!ivolunteer" padding style="color:#4a4a4a; font-size: 20px">
+ <span>  عند انضمامك في هذا البرنمج فانت توافق على الشروط </span>
+  <br>
+  <span style="color: #3dcc83; font-size: 20px">1- </span> ان هذا البرنامج ليس هدفه ربحي $ وانما هدفه مساعدة الحيوانات المتضررة
+  <br>
+  <span style="color: #3dcc83;font-size: 20px">2- </span> يجب ان تكون احدى هذه الاشياء من اجل الانضمام
+  <div style="padding: 0px 15px 0px 15px">
+      <span style="color: #3dcc83;  font-size: 20px">- </span> دكتور بيطري 
+  <br>
+  <span style="color: #3dcc83; font-size: 20px">- </span> تمتلك سياره ومستعد لنقل الحيوانات الى الدكتور 
+  <br>
+  <span style="color: #3dcc83; font-size: 20px">- </span>تستطيع تكفل احدى اليحوانات والعناية به
+  <br>
+  <span style="color: #3dcc83; font-size: 20px">- </span> شخص او شركه داعمة ماديا من  اجل استمرار المساعدة 
+  </div>
+  <span> <span style="color: #3dcc83; font-size: 20px">3- </span> عند متابعة حالة فانت المسؤول وتتحملها وتحلها واذا لم تستطع تعطي للاداره خبر.</span>
+<button ion-button block round style=" font-size: 15px; display: block; margin: 20px auto 0 auto; background: linear-gradient( to bottom right, #3dcc83 , #03b898); border:none; "(click)="gotovolunteer()">
+ موافق والمتابعة
+</button>
+   </div>
+
+
+
+
+
+   <div  *ngIf="ivolunteer" style="color: #3dcc83; ">
+      <ion-list>
+          <div class="flat">
+              <label for="inputname" class="flat-label ">
+                  <ion-icon class="mypadding" name="md-person"> <strong>الاسم الكامل</strong></ion-icon>
+                </label>
+              <input [(ngModel)]="data.name" id="flat-input" type="text" class="flat-input is-select" name="flat-input" onfocus=" $(this).parent().addClass('is-select filed');"
+                onblur="if ($(this).val() == ''){$(this).parent().removeClass('is-select'); }">
+            </div>
+          <br>
+         
+         
+
+          <div class="flat1">
+              
+          <ion-item>
+              <ion-label class="labcolor">
+                <ion-icon  name="medical"  [ngClass]="{mycaloris:data.status != ''}"> <strong> بصفتي</strong></ion-icon>
+              </ion-label>
+              <ion-select [(ngModel)]="data.status" cancelText="الغاء" okText="موفقه">
+                <ion-option value="طبيب بيطري">طبيب بيطري </ion-option>
+                <ion-option value="مساعد في النقل">مساعد في النقل</ion-option>
+                <ion-option value="كفل الحيوان">كفل الحيوان</ion-option>
+                <ion-option value="داعم للبرنامج">داعم للبرنامج</ion-option>
+              </ion-select>
+            </ion-item>
+          </div>
+          <div class="flat">
+              <label for="inputname" class="flat-label ">
+                  <ion-icon name="md-pin"  >  <strong>المنطقه</strong></ion-icon>
+                </label>
+              <input [(ngModel)]="data.zone"  id="flat-input" type="text" class="flat-input is-select" name="flat-input" onfocus=" $(this).parent().addClass('is-select filed');"
+                onblur="if ($(this).val() == ''){$(this).parent().removeClass('is-select'); }">
+            </div>
+            <div class="flat">
+                <label for="inputname" class="flat-label ">
+                    <ion-icon name="md-call">  <strong>رقم الهاتف</strong></ion-icon>
+                  </label>
+                <input [(ngModel)]="data.phone"   id="flat-input" type="text" class="flat-input is-select" name="flat-input" onfocus=" $(this).parent().addClass('is-select filed');"
+                  onblur="if ($(this).val() == ''){$(this).parent().removeClass('is-select'); }">
+              </div>
+              <div class="flat">
+                  <label for="inputname" class="flat-label ">
+                      <ion-icon class="mypadding" name="md-mail">  <strong>الاميل</strong></ion-icon>
+                    </label>
+                  <input [(ngModel)]="data.email"  id="flat-input" type="email" class="flat-input is-select" name="flat-input" onfocus=" $(this).parent().addClass('is-select filed');"
+                    onblur="if ($(this).val() == ''){$(this).parent().removeClass('is-select'); }">
+                </div>
+                <div class="flat">
+                    <label for="inputname" class="flat-label ">
+                        <ion-icon class="mypadding" name="lock">  <strong>كلمه السر</strong></ion-icon>
+                      </label>
+                    <input [(ngModel)]="data.password" id="flat-input" type="password" class="flat-input is-select" name="flat-input" onfocus=" $(this).parent().addClass('is-select filed');"
+                      onblur="if ($(this).val() == ''){$(this).parent().removeClass('is-select'); }">
+                  </div>
+           
+                  <div class="flat">
+                      <label for="inputname" class="flat-label ">
+                          <ion-icon class="mypadding" name="lock">  <strong>اعد كتابة كلمة السر</strong></ion-icon>
+                        </label>
+                      <input [(ngModel)]="data.confirmpassword" id="flat-input" type="password" class="flat-input is-select" name="flat-input" onfocus=" $(this).parent().addClass('is-select filed');"
+                        onblur="if ($(this).val() == ''){$(this).parent().removeClass('is-select'); }">
+                    </div>
+             
+          <button ion-button block round style=" font-size: 15px; display: block; margin: 20px auto 0 auto; background: linear-gradient( to bottom right, #3dcc83 , #03b898); border:none; " (click)="volunteer()"> ارسال</button>
+        </ion-list>
+   </div>
+
+
+
+
+
+
+ 
+  </ion-card-content>
+</ion-card>
+</ion-content>
